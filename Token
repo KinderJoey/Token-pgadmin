@@ -1,0 +1,49 @@
+create table pembayaran (
+	id_metode smallserial primary key,
+	metode varchar (50)not null,
+	nama varchar (50) not null,
+	pajak smallint not null,
+	diskon smallint not null
+);
+CREATE TABLE supplier (
+    id_supplier smallserial primary key,
+	supplier VARCHAR(20) NOT NULL,
+    barang      VARCHAR(20) NOT NULL,
+    kota        VARCHAR(20) NOT NULL,
+    jumlah      VARCHAR(20) NOT NULL
+);
+CREATE TABLE transaksi (
+    id_transaksi             CHAR(10) primary key,
+    id_supplier     CHAR(10) NOT NULL,
+	id_produk CHAR(10) NOT NULL,
+    id_pembayaran CHAR(10),
+	id_customer     CHAR(10) NOT NULL,
+	tanggal       DATE NOT NULL,
+	total_harga  INTEGER NOT NULL
+);
+CREATE TABLE produk (
+    id_produk  CHAR(10) primary key,
+    nama VARCHAR(20) NOT NULL,
+    daya       VARCHAR(20) NOT NULL,
+    kota       VARCHAR(20) NOT NULL
+);
+CREATE TABLE jenis_pembayaran (
+    id_pembayaran CHAR(10) primary key,
+	metode VARCHAR(20) NOT NULL,
+    nama   VARCHAR(20) NOT NULL,
+    pajak               VARCHAR(20) NOT NULL,
+    diskon              VARCHAR(20) NOT NULL
+	
+);
+CREATE TABLE customer (
+    id_customer  CHAR(10) primary key,
+    id_pelanggan VARCHAR(20) NOT NULL,
+    nama         VARCHAR(20) NOT NULL,
+    kota         VARCHAR(20) NOT NULL
+);
+CREATE TABLE admin (
+    id_admin CHAR(10) primary key,
+    nama     VARCHAR(20) NOT NULL,
+    alamat   VARCHAR(20) NOT NULL,
+    kota     VARCHAR(20) NOT NULL
+);
